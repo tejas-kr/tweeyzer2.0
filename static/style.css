@@ -1,0 +1,49 @@
+/* font-family: 'Inconsolata', monospace; */
+
+body {
+	font-family: 'Inconsolata', monospace;
+	padding: 0;
+	width: 60%;
+	margin: auto;	
+}
+.home {
+	padding-top: 30%;
+}
+.logo {
+	margin: 2% auto;
+	float: left;
+	padding-left: 20%;
+	font-size: 30pt;
+	color: purple;
+}
+.form {
+	border-left: 1px solid black;
+	margin-left: 50%;
+	line-height: 40px;
+	text-align: center;
+} 
+.form input[type='text'] {
+	height: 25px;
+}
+.form input[type='submit'] {
+	border-radius: 0;
+	background-color: #D890AE;
+	color: white;
+	border: 0;
+}
+
+.head {
+	margin-top: 15px;
+	font-size: 40pt;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 5px;
+	background-color: #638C8A
+}
+.tweets {
+	font-size: 25pt;
+	line-height: 40px;
+}
+.tweets h4 {
+	color: red;
+}

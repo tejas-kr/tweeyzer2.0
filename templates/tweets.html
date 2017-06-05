@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tweelyzer - tweets sentiment analysis</title>
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="head">
+		Positive % = {{ num_ptweets }}<br>
+		Nuetral % = {{ num_neutweets }}<br>
+		Negative % = {{ num_ntweets }}<br>
+	</div>
+	<div class="tweets">
+		<br>
+		<h4>Top Positive Tweets-</h4><br>
+		{% for tweet in ptweets %}
+			{{ tweet['text'] }}<br>
+		{% endfor %}
+		<hr>
+	</div>
+	<div class="tweets">
+		<br>
+		<h4>Top Neutral Tweets-</h4><br>
+		{% for tweet in neutweets %}
+			{{ tweet['text'] }}<br>
+		{% endfor %}
+		<hr>
+	</div>
+	<div class="tweets">
+		<br>
+		<h4>Top Negative Tweets-</h4><br>
+		{% for tweet in ntweets %}
+			{{ tweet['text'] }}<br>
+		{% endfor %}
+		<hr>
+	<div class="tweets">
+</body>
+</html>
