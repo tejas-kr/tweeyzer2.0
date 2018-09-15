@@ -1,0 +1,282 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"paddi",
+				"padding-top\tproperty"
+			],
+			[
+				"padd",
+				"padding-top\tproperty"
+			],
+			[
+				"bg-",
+				"btn-group-justified \tBootstrap 3 Class"
+			],
+			[
+				"html",
+				"html\thtml"
+			],
+			[
+				"Obje",
+				"ObjectID"
+			],
+			[
+				"body",
+				"bodyParser"
+			],
+			[
+				"message",
+				"messages"
+			],
+			[
+				"messa",
+				"messages"
+			],
+			[
+				"fun",
+				"function_without_name"
+			],
+			[
+				"mess",
+				"messages"
+			],
+			[
+				"mes",
+				"messages"
+			],
+			[
+				"cosn",
+				"console_log"
+			],
+			[
+				"console",
+				"console_log"
+			],
+			[
+				"send",
+				"sendmessage"
+			],
+			[
+				"consol",
+				"console_log"
+			],
+			[
+				"conso",
+				"console_log"
+			],
+			[
+				"margi",
+				"margin-top\tproperty"
+			],
+			[
+				"form",
+				"form-control \tBootstrap 3 Class"
+			],
+			[
+				"form-",
+				"form-horizontal \tBootstrap 3 Class"
+			],
+			[
+				"co",
+				"config"
+			],
+			[
+				"RE",
+				"Response"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"codeinte",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 597.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/tejas/programs/projects/tweelyzer"
+	],
+	"file_history":
+	[
+		"/var/www/html/tejas-kr/static/css/style.css",
+		"/home/tejas/programs/projects/tejas-kr.github.io/tejas-kr.github.io/index.html",
+		"/home/tejas/programs/projects/message-me/app/views/login.ejs",
+		"/home/tejas/programs/projects/message-me/app/models/login_m.js",
+		"/home/tejas/programs/projects/message-me/config/db.js",
+		"/home/tejas/programs/projects/message-me/app/views/register.ejs",
+		"/home/tejas/programs/projects/message-me/app/routes/note_routes.js",
+		"/home/tejas/programs/projects/message-me/app/views/header.ejs",
+		"/home/tejas/programs/projects/message-me/app/static/css/bootstrap.min.css",
+		"/home/tejas/programs/projects/message-me/app/static/css/style.css",
+		"/home/tejas/programs/projects/message-me/app/views/footer.ejs",
+		"/home/tejas/programs/projects/message-me/app/models/index.js",
+		"/home/tejas/programs/projects/message-me/app/routes/index.js",
+		"/home/tejas/programs/projects/message-me/routes/note_routes.js",
+		"/home/tejas/programs/projects/message-me/routes/index.js",
+		"/home/tejas/programs/projects/message-me/package.json",
+		"/var/www/html/crik_liv/src/public/.htaccess",
+		"/var/www/html/crik_liv/src/.gitignore"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tweelyzer2.0.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 233.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

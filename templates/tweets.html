@@ -5,37 +5,143 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Tweelyzer - tweets sentiment analysis</title>
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 </head>
 <body>
-	<div class="head">
-		Positive % = {{ num_ptweets }}<br>
-		Nuetral % = {{ num_neutweets }}<br>
-		Negative % = {{ num_ntweets }}<br>
+
+	<div class="row">
+
+		<div class="logo col-sm-3">
+			Tweelyzer
+		</div>
+
+		<div class="form-inline col-sm-9" name="sub_analysis" style="text-align: right; padding-top: 10px;">
+			
+			<input type="text" class="form-control" name="subject" onkeyup="hide_t_div(this)" placeholder="Enter subject" required/>
+			<!-- <input type="text" name="count" placeholder="How many tweets?" required/><br> -->
+			<input type="button" id="get_tweets" onclick="get_tweets()" class="btn btn-info" value="Ananlyse"/>
+		</div>
+		
 	</div>
-	<div class="tweets">
-		<br>
-		<h4>Top Positive Tweets-</h4><br>
-		{% for tweet in ptweets %}
-			{{ tweet['text'] }}<br>
-		{% endfor %}
-		<hr>
+
+
+	<hr>
+
+	<div id="all_tweets_analysed" style="display: none;">
+		<div class="head">
+			Positive % = <span id="num_ptweets"></span><br>
+			Nuetral % = <span id="num_neutweets"></span><br>
+			Negative % = <span id="num_ntweets"></span><br>
+		</div>
+		<div class="tweets">
+			<br>
+			<h4>Top Positive Tweets-</h4><br>
+			<div id="ptweets">
+				
+			</div>
+			<hr>
+		</div>
+		<div class="tweets">
+			<br>
+			<h4>Top Neutral Tweets-</h4><br>
+			<div id="neutweets">
+				
+			</div>
+			<hr>
+		</div>
+		<div class="tweets">
+			<br>
+			<h4>Top Negative Tweets-</h4><br>
+			<div id="ntweets">
+				
+			</div>
+			<hr>
+		</div>
 	</div>
-	<div class="tweets">
-		<br>
-		<h4>Top Neutral Tweets-</h4><br>
-		{% for tweet in neutweets %}
-			{{ tweet['text'] }}<br>
-		{% endfor %}
-		<hr>
-	</div>
-	<div class="tweets">
-		<br>
-		<h4>Top Negative Tweets-</h4><br>
-		{% for tweet in ntweets %}
-			{{ tweet['text'] }}<br>
-		{% endfor %}
-		<hr>
-	<div class="tweets">
+
+	<script
+	  src="https://code.jquery.com/jquery-1.12.4.min.js"
+	  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	  crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+	<script type="text/javascript">
+
+		function hide_t_div (e) {
+			$("#all_tweets_analysed").hide();
+		}
+			
+		function get_tweets() {
+			// console.log($("input[name='subject']").val());
+
+			$.ajax({
+				url: "{{ url_for('tweets') }}",
+				type: "GET",
+				data: {
+					subject: $("input[name='subject']").val()
+				},
+				dataType: "JSON",
+				success: function (data) {
+					$("#all_tweets_analysed").show();
+
+					$("#num_ptweets").html(data.num_ptweets);
+					$("#num_neutweets").html(data.num_neutweets);
+					$("#num_ntweets").html(data.num_ntweets);
+
+					let html_ptweets = '\
+					<ul>\
+					';
+					for (let i = 0; i < data.ptweets.length; i++) {
+						html_ptweets += '\
+						<li>'+ data.ptweets[i].text +'</li>\
+						';
+					}
+					html_ptweets += '\
+					</ul>\
+					';
+
+					let html_neutweets = '\
+					<ul>\
+					';
+					for (let i = 0; i < data.neutweets.length; i++) {
+						html_neutweets += '\
+						<li>'+ data.neutweets[i].text +'</li>\
+						';
+					}
+					html_neutweets += '\
+					</ul>\
+					';
+
+					let html_ntweets = '\
+					<ul>\
+					';
+					for (let i = 0; i < data.ntweets.length; i++) {
+						html_ntweets += '\
+						<li>'+ data.ntweets[i].text +'</li>\
+						';
+					}
+					html_ntweets += '\
+					</ul>\
+					';
+
+					$('#ptweets').html(html_ptweets);
+					$('#neutweets').html(html_neutweets);
+					$('#ntweets').html(html_ntweets);
+
+				},
+				error: function (data) {
+					$.alert({
+						title: "Error Occured!",
+						content: "Please try again..."
+					});
+				}
+			});
+		};
+
+	</script>
+
 </body>
 </html>

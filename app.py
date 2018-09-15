@@ -1,6 +1,6 @@
 import tweepy
 from textblob import TextBlob
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
@@ -9,11 +9,11 @@ app.secret_key = "matkarohack"
 
 @app.route('/')
 def index():
-	return render_template('index.html')
+	return render_template('tweets.html')
 
-@app.route('/tweets', methods=['POST'])
+@app.route('/tweets', methods=['GET'])
 def tweets():
-	subject = request.form['subject']
+	subject = request.args.get('subject')
 	# count = request.form['count']
 
 				###########################################
@@ -66,7 +66,19 @@ def tweets():
 	num_neutweets = (len(neutweets)/len(tweets)) * 100
 	num_ntweets = (len(ntweets)/len(tweets)) * 100
 
-	return render_template('tweets.html', subject=subject, ptweets=ptweets, neutweets=neutweets, ntweets=ntweets, num_ptweets=round(num_ptweets, 2), num_neutweets=round(num_neutweets, 2), num_ntweets=round(num_ntweets, 2))
+	ret_dict = {
+		"subject": subject,
+		"ptweets": ptweets, 
+		"neutweets": neutweets, 
+		"ntweets": ntweets, 
+		"num_ptweets": round(num_ptweets, 2), 
+		"num_neutweets": round(num_neutweets, 2), 
+		"num_ntweets": round(num_ntweets, 2)
+	}
+
+	return jsonify(ret_dict)
+
+	# return render_template('tweets.html', subject=subject, ptweets=ptweets, neutweets=neutweets, ntweets=ntweets, num_ptweets=round(num_ptweets, 2), num_neutweets=round(num_neutweets, 2), num_ntweets=round(num_ntweets, 2))
 
 if __name__ == '__main__':
 	app.run(debug = True)

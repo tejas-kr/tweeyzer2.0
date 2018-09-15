@@ -10,11 +10,11 @@ body {
 	padding-top: 30%;
 }
 .logo {
-	margin: 2% auto;
 	float: left;
-	padding-left: 20%;
 	font-size: 30pt;
 	color: purple;
+	position: relative;
+	bottom: 2px;
 }
 .form {
 	border-left: 1px solid black;
@@ -31,6 +31,21 @@ body {
 	color: white;
 	border: 0;
 }
+
+/*.form_em {
+	line-height: 40px;
+	text-align: center;
+    padding-top: 10px;
+} 
+.form_em input[type='text'] {
+	height: 25px;
+}
+.form_em input[type='submit'] {
+	border-radius: 0;
+	background-color: #D890AE;
+	color: white;
+	border: 0;
+}*/
 
 .head {
 	margin-top: 15px;
